@@ -1,12 +1,12 @@
 package javaBasicExercises;
 
-public class DoublyLinkedList <T extends Comparable<T>>{
+public class DoublyLinkedListMod <T extends Comparable<T>>{
 
-	private Note<T> head;
-	private Note<T> tail;
+	private DoubleNote<T> head;
+	private DoubleNote<T> tail;
 	
 	public void insert(T data) {
-		Note<T> newNode = new Note<>(data);
+		DoubleNote<T> newNode = new DoubleNote<>(data);
 		
 		if(tail == null) {
 			tail = newNode;
@@ -20,14 +20,14 @@ public class DoublyLinkedList <T extends Comparable<T>>{
 	}
 	
 	public void traversFoward(T data) {
-		Note<T> actualNote = head;
+		DoubleNote<T> actualNote = head;
 		while (actualNote != null) {
 			System.out.println(actualNote);
 			actualNote = actualNote.getNextNode();
 		}
 	}
 	public void traversBackward(T data) {
-		Note<T> actualNote = tail;
+		DoubleNote<T> actualNote = tail;
 		while (actualNote != null) {
 			System.out.println(actualNote);
 			actualNote = actualNote.getPreviousNode();

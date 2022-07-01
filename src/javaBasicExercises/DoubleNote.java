@@ -1,13 +1,13 @@
 package javaBasicExercises;
 
-public class Note <T extends  Comparable<T>>{
+public class DoubleNote <T extends  Comparable<T>>{
 
 	private T data;
 	//Memory heavier than single linked list
-	private Note<T> previousNode;
-	private Note<T> nextNode;
+	private DoubleNote<T> previousNode;
+	private DoubleNote<T> nextNode;
 	
-	public Note(T data) {
+	public DoubleNote(T data) {
 		super();
 		this.data = data;
 	}
@@ -20,19 +20,19 @@ public class Note <T extends  Comparable<T>>{
 		this.data = data;
 	}
 
-	public Note<T> getPreviousNode() {
+	public DoubleNote<T> getPreviousNode() {
 		return previousNode;
 	}
 
-	public void setPreviousNode(Note<T> previousNode) {
+	public void setPreviousNode(DoubleNote<T> previousNode) {
 		this.previousNode = previousNode;
 	}
 
-	public Note<T> getNextNode() {
+	public DoubleNote<T> getNextNode() {
 		return nextNode;
 	}
 
-	public void setNextNode(Note<T> nextNode) {
+	public void setNextNode(DoubleNote<T> nextNode) {
 		this.nextNode = nextNode;
 	}
 
