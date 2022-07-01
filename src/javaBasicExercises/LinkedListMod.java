@@ -18,6 +18,17 @@ public class LinkedListMod<T extends Comparable<T>> implements ListMod<T>{
 			insertBegining(data);
 		}
 	}
+	public void reverse() {
+		Node<T> currentNode = this.root;
+		Node<T> prevNode = null;
+		Node<T> nextNode = null;
+		while (currentNode != null) {
+			nextNode = currentNode.getNextNode();
+			currentNode.setNextNode(prevNode);
+			currentNode = nextNode;
+		}
+		this.root = prevNode;
+	}
 	//just need to update reference
 	private void insertBegining(T data) {
 		// TODO Auto-generated method stub
@@ -70,6 +81,18 @@ public class LinkedListMod<T extends Comparable<T>> implements ListMod<T>{
 			System.out.println(actualNode);
 			actualNode = actualNode.getNextNode();
 		}
+	}
+	public Node<T> getMiddleNode(){
+		//Method for finding middle node
+		Node<T> slowPointer = this.root;
+		Node<T> fastPointer = this.root;
+		//Fast pointer is twice faster than slow pointer
+		//So when fast pointer reach the tail node slowPointer points the middle node
+		while (fastPointer.getNextNode()!=null && fastPointer.getNextNode().getNextNode()!=null) {
+			slowPointer = slowPointer.getNextNode();
+			fastPointer = fastPointer.getNextNode().getNextNode();
+		}
+		return slowPointer;
 	}
 
 	public int size() {

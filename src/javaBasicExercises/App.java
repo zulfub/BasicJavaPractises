@@ -1,6 +1,7 @@
 package javaBasicExercises;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -13,6 +14,8 @@ public class App {
 		System.out.println("LinkedList Practice: 5");
 		System.out.println("Doubly LinkedList Practice: 6");
 		System.out.println("Compare Data Structures: 7");
+		System.out.println("Find the Middle Node of Linked List: 8");
+		System.out.println("Reverse A LinkedList: 9");
 		//Scanning Int from keyboard for operation
 		Scanner scan = new Scanner(System.in);			
 		int n = scan.nextInt();
@@ -115,6 +118,35 @@ public class App {
 				}
 				System.out.println("Elapse Time for Double LinkedList::" +(System.currentTimeMillis()-startTime));
 			break;
+			case 8:
+				System.out.println("Finding the middle Node"); 
+				LinkedListMod<Person> people1 = new LinkedListMod<>();
+				people1.insert(new Person(1,"Skuld"));
+				people1.insert(new Person(2,"Ali"));
+				people1.insert(new Person(3,"Veli"));
+				people1.insert(new Person(4,"Cengiz"));
+				people1.insert(new Person(5,"Ahmet"));
+				people1.insert(new Person(6,"Sakir"));
+				people1.insert(new Person(7,"Yasar"));
+				people1.insert(new Person(8,"Osman"));
+				people1.insert(new Person(9,"Muray"));
+				people1.insert(new Person(10,"Mahmut"));
+				people1.insert(new Person(11,"Kamil"));
+				System.out.println(people1.getMiddleNode());
+			break;
+			case 9:
+				System.out.println("Reverse A LinkedList");
+				LinkedListMod<Integer> linkListRev = new LinkedListMod<>();
+				linkListRev.insert(10);
+				linkListRev.insert(2);
+				linkListRev.insert(13);
+				linkListRev.insert(5);
+				linkListRev.traverse();
+				
+				linkListRev.reverse();
+				System.out.println("Sa");
+				linkListRev.traverse();
+				
 		}
 		
 	}
