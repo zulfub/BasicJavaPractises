@@ -28,6 +28,7 @@ public class LinkedListMod<T extends Comparable<T>> implements ListMod<T>{
 			currentNode = nextNode;
 		}
 		this.root = prevNode;
+		traverse();
 	}
 	//just need to update reference
 	private void insertBegining(T data) {

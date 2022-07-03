@@ -16,6 +16,7 @@ public class App {
 		System.out.println("Compare Data Structures: 7");
 		System.out.println("Find the Middle Node of Linked List: 8");
 		System.out.println("Reverse A LinkedList: 9");
+		System.out.println("Stack Operations: 10");
 		//Scanning Int from keyboard for operation
 		Scanner scan = new Scanner(System.in);			
 		int n = scan.nextInt();
@@ -144,8 +145,16 @@ public class App {
 				linkListRev.traverse();
 				
 				linkListRev.reverse();
-				System.out.println("Sa");
-				linkListRev.traverse();
+			break;
+			case 10:
+				Stack<String> namess = new Stack<>();
+				namess.push("Skuld");
+				namess.push("Zulfu");
+				namess.push("Baris");
+				namess.push("Ege");
+				while (!namess.isEmpty()) {
+					System.out.println(namess.pop());
+				}
 				
 		}
 		
