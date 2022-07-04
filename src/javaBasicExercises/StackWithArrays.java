@@ -14,7 +14,7 @@ public class StackWithArrays<T> {
 		
 		if(count==stack.length) {
 		//Resize the array when no empty space left in array
-			resize(2*count);
+			resize(2*stack.length);
 		}
 		//count++ in array columns means , first assign value to array and increase 1 to counter
 		stack[count++]=newData;
@@ -28,7 +28,7 @@ public class StackWithArrays<T> {
 		stack[count] = null;
 		if(count >0 && count == stack.length/4)
 			//decrease the array capacity
-			resize(count/2);
+			resize(stack.length/2);
 		return item;
 		
 	}
@@ -40,6 +40,9 @@ public class StackWithArrays<T> {
 	}
 
 	private void resize(int capacity ) {
+		//Resize information
+		long starttime = System.currentTimeMillis();
+		System.out.println("Resizing the Array of Stack , New Capacity is " + capacity);
 		//This is the bottleneck of app == O(N)		
 		T[] stackCopy = (T[]) new Object[capacity];
 		//copy the items from stack to stackCopy array
@@ -48,5 +51,6 @@ public class StackWithArrays<T> {
 		}
 		//update the references
 		stack=stackCopy;
+		System.out.println("Array Resize Time ::: " + (System.currentTimeMillis() - starttime));
 	}
 }

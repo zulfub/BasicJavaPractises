@@ -2,6 +2,7 @@ package javaBasicExercises;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class App {
@@ -17,6 +18,7 @@ public class App {
 		System.out.println("Find the Middle Node of Linked List: 8");
 		System.out.println("Reverse A LinkedList: 9");
 		System.out.println("Stack Operations: 10");
+		System.out.println("Stack of Arrays : 11");
 		//Scanning Int from keyboard for operation
 		Scanner scan = new Scanner(System.in);			
 		int n = scan.nextInt();
@@ -147,6 +149,7 @@ public class App {
 				linkListRev.reverse();
 			break;
 			case 10:
+				System.out.println("Stack Initilazition");
 				Stack<String> namess = new Stack<>();
 				namess.push("Skuld");
 				namess.push("Zulfu");
@@ -155,7 +158,21 @@ public class App {
 				while (!namess.isEmpty()) {
 					System.out.println(namess.pop());
 				}
-				
+			break;
+			case 11:
+				System.out.println("Stack of Arrays ");
+				System.out.println("Give an UpperLimit for elements of Stack ::");
+				StackWithArrays<Integer> listOfNums = new StackWithArrays<>();
+				Random rand = new Random();
+				int upprLimit = scan.nextInt();
+				for(int i=1;i<upprLimit;i++) {
+					
+					listOfNums.push(rand.nextInt(i));
+				}
+				while(!listOfNums.isEmpty()) {
+					System.out.println(listOfNums.pop());
+				}
+			break;	
 		}
 		
 	}
