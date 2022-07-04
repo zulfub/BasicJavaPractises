@@ -19,6 +19,25 @@ public class StackWithArrays<T> {
 		//count++ in array columns means , first assign value to array and increase 1 to counter
 		stack[count++]=newData;
 	}
+	//Returns and removes the last item
+	public T pop() {
+		if(isEmpty())return null;
+		//Arrays start with 0 so first decreases the count
+		T item = stack[--count];
+		//Garbage Collection 
+		stack[count] = null;
+		if(count >0 && count == stack.length/4)
+			//decrease the array capacity
+			resize(count/2);
+		return item;
+		
+	}
+	public int size() {
+		return count;
+	}
+	public boolean isEmpty() {
+		return count==0;
+	}
 
 	private void resize(int capacity ) {
 		//This is the bottleneck of app == O(N)		
