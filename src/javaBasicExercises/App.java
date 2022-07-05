@@ -170,7 +170,7 @@ public class App {
 					listOfNums.push(rand.nextInt(i));
 				}
 				while(!listOfNums.isEmpty()) {
-					System.out.println(listOfNums.pop());
+					System.out.print(listOfNums.pop()+ " ");
 				}
 			break;	
 		}
